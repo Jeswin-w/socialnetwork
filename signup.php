@@ -72,6 +72,7 @@
 						<label>Confirm Password: </label>
 						<input type="CPassword" class="form-control" name="cpasssword">
 					</div>
+					<a href="signup.php" color="blue" style="padding-left: 30%;">Already have an account?</a>
 						
 					<div class="row" style="padding:15px 43%">
 						<button id="signup" class="btn btn-info btn-lg" name="signup" >Signin</button>

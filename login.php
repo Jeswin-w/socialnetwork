@@ -35,6 +35,7 @@
 						<label>Password: </label>
 						<input type="Password" class="form-control" name="passsword">
 					</div>
+					<a href="signup.php" color="blue" style="padding-left: 35%;">Create an account</a>
 		<div class="row" style="padding:20px 43%">
 						<button id="login" class="btn btn-info btn-lg" name="login" >Login</button>
 					</div>
