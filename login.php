@@ -29,15 +29,16 @@
 		<h3 style="text-align: center;">Log in</h3>
 		<div class="row" style="padding:20px 30px">
 						<label>Email: </label>
-						<input type="Email" class="form-control" name="email">
+						<input type="Email" class="form-control" required="required" name="email">
 					</div>
 		<div class="row" style="padding:20px 30px">
 						<label>Password: </label>
-						<input type="Password" class="form-control" name="passsword">
+						<input type="Password" class="form-control" required="required" name="passsword">
 					</div>
 					<a href="signup.php" color="blue" style="padding-left: 35%;">Create an account</a>
 		<div class="row" style="padding:20px 43%">
 						<button id="login" class="btn btn-info btn-lg" name="login" >Login</button>
+						<?php include("clogin.php"); ?>
 					</div>
 	</form>
 

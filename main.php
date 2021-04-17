@@ -58,15 +58,15 @@
 				<br>
 				<form method="post" action="" >
 					<label>Create an account: </label><br>
-					<button id="signup" class="btn btn-info btn-lg" name="signup" >Signin</button><br><br>
+					<button id="signup" class="btn btn-info btn-lg" name="signup1" >Signin</button><br><br>
 					<?php
-					    if(isset($_POST['signup'])){
+					    if(isset($_POST['signup1'])){
 					    echo "<script>window.open('signup.php','_self')</script>";
 					}?>
 					<label>Already have an account</label><br>
-					<button id="login" class="btn btn-info btn-lg" name="login" >login</button><br>
+					<button id="login" class="btn btn-info btn-lg" name="login1" >login</button><br>
 					<?php
-					    if(isset($_POST['login'])){
+					    if(isset($_POST['login1'])){
 					    echo "<script>window.open('login.php','_self')</script>";
 					}?>
 				</form>

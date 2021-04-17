@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <style type="text/css">
 	form{
 		border-width: 1px;
@@ -54,7 +55,7 @@
 
 						<label>department:</label> &emsp;
 
-						<select style="width:40%;" id="items">
+						<select style="width:40%;" id="items" name="dept">
 						  <option value="mech">Mechanical</option>
 						  <option value="civil">Civil</option>
 						  <option value="eee">EEE</option>
@@ -68,15 +69,15 @@
 						<label>Password: </label>
 						<input type="Password" class="form-control" name="passsword">
 					</div>
-					<div class="row" style="padding:15px 30px">
-						<label>Confirm Password: </label>
-						<input type="CPassword" class="form-control" name="cpasssword">
-					</div>
-					<a href="signup.php" color="blue" style="padding-left: 30%;">Already have an account?</a>
+					
+
+					<a href="login.php" color="blue" style="padding-left: 30%;">Already have an account?</a>
 						
 					<div class="row" style="padding:15px 43%">
-						<button id="signup" class="btn btn-info btn-lg" name="signup" >Signin</button>
+						<button id="signup" class="btn btn-info btn-lg" name="signup">Signin</button>
 					</div>
+					<?php
+					include("insuser.php");?>
 
 
 		</div>
