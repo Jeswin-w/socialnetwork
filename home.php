@@ -65,7 +65,7 @@ input[type="file"]{
 		<div class="content" style="border-radius: 10px;">
   			<br>
 			<form action="home.php?id=<?php echo $user_id; ?>" method="post" id="f" enctype="multipart/form-data">
-				<input type="text" name="ptitle" class="form-control" placeholder="Enter title:"><br>
+				
 				<textarea class="form-control" id="content" rows="3" name="content" placeholder="Type the post here "></textarea><br>
 				<label class="btn btn-warning" id="postimagel">Select a image
 				<input type="file" name="postimage" size="60"></label>
