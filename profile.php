@@ -47,7 +47,7 @@ input[type="file"]{
 		<div class="col-sm-2">
 			<?php 
 			$n=strtoupper($user_name);
-			echo "<h1 id='name'>$n</h1>;"?>
+			echo "<center><h1 id='name'>$n</h1></center>;"?>
 		</div>
 	</div>
 	<div class="row" style="background-color: violet;">
@@ -117,22 +117,13 @@ input[type="file"]{
 						<?php
 							global $con;
 
-	$per_page =4;
-
-	if(isset($_GET['page']))
-	{
-		$page = $_GET['page'];
-	}
-	else
-	{
-		$page=1;
-	}
+	
 	if(isset($_GET['u_id']))
 	{
 		$u_id = $_GET['u_id'];
 	}
 	
-	$start_from=($page-1)* $per_page;
+	
 	$get_post="select * from posts posts where user_id='$u_id' ORDER by 1 DESC LIMIT 5";
 	$run=mysqli_query($con,$get_post);
 
@@ -166,7 +157,9 @@ input[type="file"]{
 							<h5><small style='color:white;'>Updated a post on <strong>$post_date</strong></small></h5>
 						</div>
 					
-				<div class='col-sm-4'>
+				<div class='col-sm-2'></div>
+				<div class='col-sm-2'>
+				<center><h5 style='border:1px solid blue;color:blue;border-radius:40%'>$post_tag</h5></center>
 				</div>
 			</div>
 				<div class='row'>
@@ -197,7 +190,9 @@ input[type="file"]{
 							<h5><small style='color:white;'>Updated a post on <strong>$post_date</strong></small></h5>
 						</div>
 					
-				<div class='col-sm-4'>
+				<div class='col-sm-2'></div>
+				<div class='col-sm-2'>
+				<center><h5 style='border:1px solid blue;color:blue;border-radius:40%'>$post_tag</h5></center>
 				</div>
 			</div>
 				<div class='row'>
@@ -229,7 +224,9 @@ input[type="file"]{
 							<h5><small style='color:white;'>Updated a post on <strong>$post_date</strong></small></h5>
 						</div>
 					
-				<div class='col-sm-4'>
+				<div class='col-sm-2'></div>
+				<div class='col-sm-2'>
+				<center><h5 style='border:1px solid blue;color:blue;border-radius:40%'>$post_tag</h5></center>
 				</div>
 			</div>
 				<div class='row'>
@@ -247,7 +244,7 @@ input[type="file"]{
 		}
 		
 	}
-	include("functions/page.php");
+	
 	include("functions/del.php")
 						?>
 

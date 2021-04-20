@@ -1,7 +1,13 @@
 <?php
 include("connection.php");
 include("functions/function1.php");
+include("functions/function2.php");
 ?>
+<style type="text/css">
+	body{
+		overflow-x: hidden;
+	}
+</style>
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 <nav class="navbar navbar-default" style="background-color:	#D8BFD8; color: black;">
 	<div class="container-fluid">
@@ -12,7 +18,7 @@ include("functions/function1.php");
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="home.php" style="font-family: lobster;">Tce Network</a>
+			<a class="navbar-brand" href="home.php" style="font-family: lobster;">Chat Net</a>
 		</div>
 
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -54,9 +60,7 @@ include("functions/function1.php");
 						<li class='dropdown'>
 							<a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'><span><i class='glyphicon glyphicon-chevron-down'></i></span></a>
 							<ul class='dropdown-menu'>
-								<li>
-									<a href='my_post.php?u_id=$user_id'>My Posts <span class='badge badge-secondary'>$posts</span></a>
-								</li>
+								
 								<li>
 									<a href='edit_profile.php?u_id=$user_id'>Edit Account</a>
 								</li>
@@ -73,7 +77,7 @@ include("functions/function1.php");
 				<li class="dropdown">
 					<form class="navbar-form navbar-left" method="get" action="results.php">
 						<div class="form-group">
-							<input type="text" class="form-control" name="user_query" placeholder="Search">
+							<input type="text" class="form-control" name="res" placeholder="Search">
 						</div>
 						<button type="submit" class="btn btn-info" name="search">Search</button>
 					</form>

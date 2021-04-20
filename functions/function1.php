@@ -9,15 +9,19 @@ function insertPost(){
 	global $user_id;
 	
 	$content=htmlentities($_POST['content']);
+	$t=htmlentities($_POST['tag']);
 	$pimage=$_FILES['postimage']['name'];
 	$img_tmp=$_FILES['postimage']['tmp_name'];
 	$random=rand(1,100);
 
-	
+	if($t!="")
+	{
+		
+
 		if (strlen($content)>=1 &&  strlen($pimage)>=1 )
 		{
 			move_uploaded_file($img_tmp, "imagepost/$pimage.$random");
-			$insert="insert into posts (user_id, post_content,post_image,post_date,post_tag) values('$user_id','$content','$pimage.$random',NOW(),'')";
+			$insert="insert into posts (user_id, post_content,post_image,post_date,post_tag) values('$user_id','$content','$pimage.$random',NOW(),'$t')";
 			$run=mysqli_query($con,$insert);
 
 			if($run){
@@ -32,7 +36,7 @@ function insertPost(){
 				}else{
 					if($content==''){
 						move_uploaded_file($img_tmp, "imagepost/$pimage.$random");
-						$insert="insert into posts (user_id, post_content,post_image,post_date,post_tag) values('$user_id','','$pimage.$random',NOW(),'')";
+						$insert="insert into posts (user_id, post_content,post_image,post_date,post_tag) values('$user_id','','$pimage.$random',NOW(),'$t')";
 						$run=mysqli_query($con,$insert);
 
 						if($run){
@@ -43,7 +47,7 @@ function insertPost(){
 
 					}
 					else{
-						$insert="insert into posts (user_id, post_content,post_date,post_tag) values('$user_id','$content',NOW(),'')";
+						$insert="insert into posts (user_id, post_content,post_date,post_tag) values('$user_id','$content',NOW(),'$t')";
 						$run=mysqli_query($con,$insert);
 
 						if($run){
@@ -54,6 +58,10 @@ function insertPost(){
 					}
 				}
 			}
+		}
+		else{
+			echo "<script>alert('Select a tag')</script>";
+		}
 	
 }
 }
@@ -106,7 +114,9 @@ function getposts()
 							<h5><small style='color:white;'>Updated a post on <strong>$post_date</strong></small></h5>
 						</div>
 					
-				<div class='col-sm-4'>
+				<div class='col-sm-2'></div>
+				<div class='col-sm-2'>
+				<center><h5 style='border:1px solid blue;color:blue;border-radius:40%'>$post_tag</h5></center>
 				</div>
 			</div>
 				<div class='row'>
@@ -135,7 +145,9 @@ function getposts()
 							<h5><small style='color:white;'>Updated a post on <strong>$post_date</strong></small></h5>
 						</div>
 					
-				<div class='col-sm-4'>
+				<div class='col-sm-2'></div>
+				<div class='col-sm-2'>
+				<center><h5 style='border:1px solid blue;color:blue;border-radius:40%'>$post_tag</h5></center>
 				</div>
 			</div>
 				<div class='row'>
@@ -165,8 +177,9 @@ function getposts()
 							<h4><a style='text-decoration:none; cursor:pointer;color #3897f0;' href='user_profile.php?u_id=$user_id'>$user_name</a></h4>
 							<h5><small style='color:white;'>Updated a post on <strong>$post_date</strong></small></h5>
 						</div>
-					
-				<div class='col-sm-4'>
+					<div class='col-sm-2'></div>
+				<div class='col-sm-2'>
+				<center><h5 style='border:1px solid blue;color:blue;border-radius:40%'>$post_tag</h5></center>
 				</div>
 			</div>
 				<div class='row'>
@@ -261,8 +274,10 @@ function single_post()
 								<h5><small style='color:white;'>Updated a post on <strong>$post_date</strong></small></h5>
 							</div>
 						
-					<div class='col-sm-4'>
-					</div>
+					<div class='col-sm-2'></div>
+				<div class='col-sm-2'>
+				<center><h5 style='border:1px solid blue;color:blue;border-radius:40%'>$post_tag</h5></center>
+				</div>
 				</div>
 					<div class='row'>
 						<div class='col-sm-12'>
@@ -290,8 +305,10 @@ function single_post()
 								<h5><small style='color:white;'>Updated a post on <strong>$post_date</strong></small></h5>
 							</div>
 						
-					<div class='col-sm-4'>
-					</div>
+					<div class='col-sm-2'></div>
+				<div class='col-sm-2'>
+				<center><h5 style='border:1px solid blue;color:blue;border-radius:40%'>$post_tag</h5></center>
+				</div>
 				</div>
 					<div class='row'>
 					<h4 style='color:white; padding-left:14px;'>$content</h4>
@@ -321,8 +338,10 @@ function single_post()
 								<h5><small style='color:white;'>Updated a post on <strong>$post_date</strong></small></h5>
 							</div>
 						
-					<div class='col-sm-4'>
-					</div>
+					<div class='col-sm-2'></div>
+				<div class='col-sm-2'>
+				<center><h5 style='border:1px solid blue;color:blue;border-radius:40%'>$post_tag</h5></center>
+				</div>
 				</div>
 					<div class='row'>
 					<h4 style='color:white; padding-left:14px;'>$content</h4>
@@ -359,7 +378,7 @@ function single_post()
 			}
 			else
 			{
-				$insert="insert into comments (post_id,user_id,comment,comment_author,date) values('$post_id','$user_id','$comment','$user_com_name',NOW())";
+				$insert="insert into comments (post_id,user_id,comment,comment_author,date,ca_id) values('$post_id','$user_id','$comment','$user_com_name',NOW(),'$user_com_id')";
 
 				$run=mysqli_query($con,$insert);
 				echo "<script>alert('comment added');</script>";

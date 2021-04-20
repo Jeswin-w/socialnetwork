@@ -44,14 +44,14 @@
   </head>
 <body>
 	<div class="row" style="background-color: black; border-radius:0% 0% 50% 50%;padding-bottom: 100px;"><br>
-		<div class="text-center" style="color: blue;font-family: lobster;"><strong><h1>Tce Network</h1></strong></div><br>
+		<div class="text-center" style="color: blue;font-family: lobster;"><strong><h1>Chat Net</h1></strong></div><br>
 
-		<div class="text-center" style="color:white;"><h4>A network to share your creations like articles,projects,photos and your skills</div>
+		<div class="text-center" style="color:white;"><h4>A network to share your creations and skills<br><br>you can share your articles,projects and your skills</div>
 			
 	</div>
 	<div class="row" style="margin-top: 50px;">
 		<div class="col-sm-6">
-			<img src="img_mountains_wide.jpg" style="width:100%; height: 50%; margin-left: 40px;">
+			<img src="mainimage.png" style="width:100%; height: 30%; margin-left: 40px; margin-bottom: 5%">
 		</div>
 		<div class="col-sm-6" style="margin-top: 30px;">
 			<div class="text-center" style="font-weight: 600px;"><b><h3>Join our network now</h3></b>

@@ -9,14 +9,16 @@ while( $row = mysqli_fetch_array($run))
 {
 	$com=$row['comment'];
 	$com_name=$row['comment_author'];
-	
+	$com_id=$row['ca_id'];
 	$date=$row['date'];
 
-	$get_id="select * from users where username='$com_name'";
+	$get_id="select * from users where user_id='$com_id'";
 	$run1=mysqli_query($con,$get_id);
 	$rowa=mysqli_fetch_array($run1);
 
 	$img=$rowa['userimage'];
+
+	$name=$rowa['username'];
 	
 
 
@@ -28,7 +30,7 @@ while( $row = mysqli_fetch_array($run))
 						<div class='col-md-2'>
 					    <img src='users/$img' class='img-circle' width=30px height=30px></div>
 					    <div class='col-md-10'>
-						<h4  style='margin-left:-60px; margin-top:-7px;'><strong><b>$com_name</strong></b><br><i> commented on </i>$date</h4></div></div>
+						<h4  style='margin-left:-60px; margin-top:-7px;'><strong><b>$name</strong></b><br><i> commented on </i>$date</h4></div></div>
 						<p class='text-primary' style='margin-left:5px; font-size:20px;'>$com</p><br>
 					
 				</div>

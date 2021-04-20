@@ -61,10 +61,19 @@ input[type="file"]{
 		<h2 style="font-family:'Zen Dots', cursive; color: white;">Post</h2>
 		
 		<center>
-			<button type="button" class="collapsible">Make a a post</button>
+			<button type="button" class="collapsible">Make  a post</button>
 		<div class="content" style="border-radius: 10px;">
   			<br>
 			<form action="home.php?id=<?php echo $user_id; ?>" method="post" id="f" enctype="multipart/form-data">
+				<label style="color:black;"> Select tag</label><select class="form-control" name="tag">
+					<option value="Chat">Chat</option>
+  <option value="photography">photography</option>
+  <option value="music">music</option>
+    <option value="Android app">Android app</option>
+    <option value="nano technology">nano technology</option>
+    <option value="web development">web development</option>
+    <option value="AI">AI</option>
+				</select>
 				
 				<textarea class="form-control" id="content" rows="3" name="content" placeholder="Type the post here "></textarea><br>
 				<label class="btn btn-warning" id="postimagel">Select a image
